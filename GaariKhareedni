@@ -1,0 +1,17 @@
+from chatterbot import  ChatBot 
+from chatterbot.trainers import ListTrainer 
+
+Bot = ChatBot("Random")
+
+conversation= ["Gari Khareedni?", "Knsi?","Corolla?","Apni jaib dekho"]
+
+trainer = ListTrainer(Bot)
+trainer.train(conversation)
+
+while True:
+      try:
+          response=Bot.get_response(input())
+          print(response)
+      except (KeyboardInterrupt,EOFError,SystemExit()):
+         break
+
